@@ -15,7 +15,8 @@ public class No {
 
     String tag;
     ArrayList<No> filhos;
-    ArrayList<Atributo> atributos;
+    //No lugar de "String", tinha um "Atributo".
+    ArrayList<String> atributos;
     
     public No(String tag) {
         this.tag = tag;

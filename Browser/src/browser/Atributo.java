@@ -13,6 +13,10 @@ import java.util.LinkedList;
  * @author daniel.010191
  */
 public class Atributo {
+
+    public Atributo(String atributos) {
+        
+    }
     
     
 }
