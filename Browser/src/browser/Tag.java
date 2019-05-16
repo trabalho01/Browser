@@ -5,24 +5,18 @@
  */
 package browser;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author lucas
  */
-public class No {
-
+public class Tag extends No{
     String nome;
-    ArrayList<No> filhos;
-    ArrayList<String> atributos;
+    String atributos;
     
-    public No(String nome) {
+    public Tag(String nome, String atriutos) {
+        super(nome);
         this.nome = nome;
-        filhos = new ArrayList();
+        this.atributos = atributos;
     }
-
-    public void inserir(No node) {
-        filhos.add(node);
-    }
+    
 }

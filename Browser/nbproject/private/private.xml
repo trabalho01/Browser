@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Browser/Browser/src/browser/Browser.java</file>
-            <file>file:/E:/Browser/Browser/src/browser/Historico.java</file>
-            <file>file:/E:/Browser/Browser/src/browser/No.java</file>
-            <file>file:/E:/Browser/Browser/src/browser/Favoritos.java</file>
-            <file>file:/E:/Browser/Browser/src/browser/HTML.java</file>
-            <file>file:/E:/Browser/Browser/src/browser/Atributo.java</file>
+            <file>file:/home/lucas/NetBeansProjects/Browser/src/browser/Browser.java</file>
+            <file>file:/home/lucas/NetBeansProjects/Browser/src/browser/Texto.java</file>
+            <file>file:/home/lucas/NetBeansProjects/Browser/src/browser/No.java</file>
+            <file>file:/home/lucas/NetBeansProjects/Browser/src/browser/Parser.java</file>
+            <file>file:/home/lucas/NetBeansProjects/Browser/src/browser/Tag.java</file>
         </group>
     </open-files>
 </project-private>
