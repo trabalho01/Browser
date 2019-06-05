@@ -12,14 +12,18 @@ import java.util.regex.Pattern;
  *
  * @author lucas.101199
  */
-public class Validadora {
-    public boolean validar(String url) {
-        Pattern p = Pattern.compile("<.?html+>");
-        Matcher m = p.matcher(url);
-        if (m.find()) {
-            return true;
+public class Render {
+
+    int a = 0;
+
+    public void render(No pai) {
+        if (pai instanceof Texto) {
+            System.out.println(pai.nome);
+            return;
         } else {
-            return false;
+            for (No filho : pai.filhos) {
+                render(filho);
+            }
         }
     }
 }

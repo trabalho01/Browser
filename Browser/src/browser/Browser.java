@@ -150,13 +150,15 @@ public class Browser extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+         
         HTML ler = new HTML();
         Validadora validar = new Validadora();
-        if (validar.validar(ler.lerHTML(jTextField1.getText())) == true) {
-            No no = new No(ler.lerHTML(jTextField1.getText()));
-        } else {
-            System.out.println("URL inválida, HTML incompleto");
-        }
+//        if (validar.validar(ler.lerHTML(jTextField1.getText())) == true) {
+            No no = ler.lerHTML(jTextField1.getText());
+            System.out.println("");
+//        } else {
+//            System.out.println("URL inválida, HTML incompleto");
+//        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

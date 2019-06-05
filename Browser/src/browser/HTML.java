@@ -16,7 +16,12 @@ import java.io.IOException;
  * @author lucas.101199
  */
 public class HTML {
-    public String lerHTML(String url) {
+    
+    public No lerHTML(String url) {
+        
+        
+        Parser p1 = new Parser();
+        
         String linha = null;
         String html = "";
 
@@ -34,6 +39,7 @@ public class HTML {
         catch (IOException ex) {
             System.out.println("Erro ao ler '" + url + "'");
         }
-        return(html);
+        No teste = p1.parse(html, null);
+        return(teste);
     }
 }
