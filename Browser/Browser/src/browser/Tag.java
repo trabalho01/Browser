@@ -19,4 +19,8 @@ public class Tag extends No{
         this.atributos = atributos;
     }
     
+    public void renderizar() {
+        
+    }
+    
 }

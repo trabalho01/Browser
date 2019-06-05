@@ -10,7 +10,7 @@ package browser;
  * @author lucas
  */
 public class Texto extends No {
-    String texto;
+    public String texto;
 
     public Texto(String texto) {
         super(texto);
