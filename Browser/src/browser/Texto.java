@@ -10,10 +10,10 @@ package browser;
  * @author lucas
  */
 public class Texto extends No {
-    String texto;
+    public String texto;
 
-    public Texto(String texto) {
-        super(texto);
+    public Texto(String texto, String atributos) {
+        super(texto, atributos);
         this.texto = texto;
     }
 }

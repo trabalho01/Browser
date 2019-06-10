@@ -13,10 +13,14 @@ public class Tag extends No{
     String nome;
     String atributos;
     
-    public Tag(String nome, String atriutos) {
-        super(nome);
+    public Tag(String nome, String atributos) {
+        super(nome, atributos);
         this.nome = nome;
         this.atributos = atributos;
+    }
+    
+    public void renderizar() {
+        
     }
     
 }
