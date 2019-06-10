@@ -31,6 +31,7 @@ public class HTML {
                 while ((linha = bufferedReader.readLine()) != null) {
                  html =  html.concat(linha);
                 }
+                
             }
         } 
         catch (FileNotFoundException ex) {
@@ -40,6 +41,8 @@ public class HTML {
             System.out.println("Erro ao ler '" + url + "'");
         }
         No teste = p1.parse(html, null);
+        Render render =  new Render();
+        render.render(teste);
         return(teste);
     }
 }

@@ -13,12 +13,13 @@ import java.util.ArrayList;
  */
 public class No {
 
-    String nome;
-    ArrayList<No> filhos;
-    ArrayList<String> atributos;
+    public String nome;
+    public ArrayList<No> filhos;
+    public String atributos;
     
-    public No(String nome) {
+    public No(String nome, String atributos) {
         this.nome = nome;
+        this.atributos = atributos;
         filhos = new ArrayList();
     }
 

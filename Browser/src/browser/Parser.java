@@ -14,39 +14,33 @@ import java.util.regex.Pattern;
  */
 public class Parser {
 
-   
-
-    Pattern regex = Pattern.compile("<([^>]*)>(.*?)(<(\\/\\1)>)");
+    Pattern regex = Pattern.compile("<([A-z][A-z0-9]*)\\b([^>]*)>(.*?)<(\\/\\1)>");
+    Pattern folha = Pattern.compile("(^[^<>]*[\\w\\s]+)");
 
     public No parse(String html, No pai) {
-        Matcher m = regex.matcher(html);
-            if(m.find()){
-                String nomeTag = m.group(1);
-                String nomes = m.group(2);
-                Tag tag = new Tag(nomeTag, nomes);
-                if(pai!=null){
-                    pai.inserir(tag);
-                }
-                
-                parse(nomes,tag);
-                return tag;
+        No raiz = null;
+        Matcher f = folha.matcher(html);
+        if (f.find()) {
+            Texto texto = new Texto(f.group(1), "");
+            if (pai != null) {
+                pai.inserir(texto);
             }
-           return null;
-//        if (pai.filhos.isEmpty()) {
-//            Texto texto = new Texto(m.group(2));
-//        } else {
-//
-//            for (int i = 0; i < 10; i++) {
-//                html.replaceAll(html, m.group(2));
-//
-//                Tag tag = new Tag(m.group(1), m.group(2));
-//                if (pai != null) {
-//                    pai.filhos.add(tag);
-//                }
-//            }
-//        }
-//return tag;
-   
+            return texto;
+        }
+        System.out.println(html);
+        Matcher m = regex.matcher(html);
+        while (m.find()) {
+            String nomeTag = m.group(1);
+            String atributos = m.group(2);
+            String nomes = m.group(3);
+            Tag tag = new Tag(nomeTag, atributos);
+            if (pai != null) {
+                pai.inserir(tag);
+            } else {
+                raiz = tag;
+            }
+            parse(nomes, tag);
+        }
+        return raiz;
     }
 }
-
