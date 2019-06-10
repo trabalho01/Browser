@@ -22,6 +22,4 @@ public class Validadora {
             return false;
         }
     }
-    
-    //(^<((?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])).+>$)
 }

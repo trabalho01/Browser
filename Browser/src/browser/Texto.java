@@ -5,14 +5,15 @@
  */
 package browser;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow.ArrayLinkedList;
-import java.util.LinkedList;
-
 /**
  *
- * @author daniel.010191
+ * @author lucas
  */
-public class Atributo {
-    
-    
+public class Texto extends No {
+    public String texto;
+
+    public Texto(String texto, String atributos) {
+        super(texto, atributos);
+        this.texto = texto;
+    }
 }
