@@ -16,7 +16,7 @@ public class No {
     public String nome;
     public ArrayList<No> filhos;
     public String atributos;
-    
+
     public No(String nome, String atributos) {
         this.nome = nome;
         this.atributos = atributos;

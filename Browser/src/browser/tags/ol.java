@@ -5,22 +5,28 @@
  */
 package browser.tags;
 
+import browser.Posicao;
 import browser.Tag;
+import javax.swing.JEditorPane;
 
 /**
  *
  * @author lucas
  */
 public class ol extends Tag {
+
+    JEditorPane pane;
     String texto;
+
     @Override
-    public void renderizar() {
-        
+    public void renderizar(Posicao p) {
+
     }
-    
-    public ol(String nome, String atriutos, String texto) {
+
+    public ol(String nome, String atriutos, String texto, JEditorPane pane) {
         super(nome, atriutos);
         this.texto = texto;
+        this.pane = pane;
     }
-    
+
 }

@@ -5,22 +5,24 @@
  */
 package browser;
 
+import java.util.ArrayList;
+import javax.swing.JLabel;
+
 /**
  *
  * @author lucas
  */
-public class Tag extends No{
-    String nome;
-    String atributos;
-    
+public class Tag extends No {
+
+    public ArrayList<JLabel> jlabel = new ArrayList();
+
     public Tag(String nome, String atributos) {
         super(nome, atributos);
         this.nome = nome;
         this.atributos = atributos;
     }
-    
-    public void renderizar() {
-        
+
+    public void renderizar(Posicao p) {
     }
-    
+
 }

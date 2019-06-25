@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class Parser {
 
-    Pattern regex = Pattern.compile("<([A-z][A-z0-9]*)\\b([^>]*)>(.*?)<(\\/\\1)>");
+    Pattern regex = Pattern.compile("<([A-z][A-z0-9]*)\\b([^>]*)>(.*?)<(\\/\\1)>|<(br)>(.*)|<(img)([^>]*)>");
     Pattern folha = Pattern.compile("(^[^<>]*[\\w\\s]+)");
 
     public No parse(String html, No pai) {
@@ -27,19 +27,31 @@ public class Parser {
             }
             return texto;
         }
-        System.out.println(html);
         Matcher m = regex.matcher(html);
+        String nomeTag = "";
+        String atributos = "";
+        String sobra = "";
         while (m.find()) {
-            String nomeTag = m.group(1);
-            String atributos = m.group(2);
-            String nomes = m.group(3);
+            if (m.group(1) != null) {
+                nomeTag = m.group(1);
+                atributos = m.group(2);
+                sobra = m.group(3);
+            }
+            if (m.group(5) != null) {
+                nomeTag = m.group(5);
+                sobra = m.group(6);
+            }
+            if (m.group(7) != null) {
+                nomeTag = m.group(7);
+                atributos = m.group(8);
+            }
             Tag tag = new Tag(nomeTag, atributos);
             if (pai != null) {
                 pai.inserir(tag);
             } else {
                 raiz = tag;
             }
-            parse(nomes, tag);
+            parse(sobra, tag);
         }
         return raiz;
     }
