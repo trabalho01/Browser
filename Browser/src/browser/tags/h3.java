@@ -5,22 +5,40 @@
  */
 package browser.tags;
 
+import browser.Posicao;
 import browser.Tag;
+import java.awt.Font;
+import javax.swing.JEditorPane;
+import javax.swing.JLabel;
 
 /**
  *
  * @author lucas
  */
 public class h3 extends Tag {
+
+    JEditorPane pane;
     String texto;
+    Font f = new Font(Font.SANS_SERIF, Font.PLAIN, 14);
+
     @Override
-    public void renderizar() {
-        
+    public void renderizar(Posicao p) {
+
+        JLabel label = new JLabel(texto, JLabel.LEFT);
+        label.setSize(pane.getWidth(), texto.length() + 15);
+        label.setFont(f);
+        label.setLocation(p.getX(), p.getY());
+//        p.setX(p.getX() + x);
+        p.setY(p.getY() + 35);
+        label.setVisible(true);
+        pane.add(label);
+
     }
-    
-    public h3(String nome, String atriutos, String texto) {
+
+    public h3(String nome, String atriutos, String texto, JEditorPane pane) {
         super(nome, atriutos);
         this.texto = texto;
+        this.pane = pane;
     }
-    
+
 }

@@ -13,13 +13,10 @@ import java.util.regex.Pattern;
  * @author lucas.101199
  */
 public class Validadora {
+
     public boolean validar(String url) {
         Pattern p = Pattern.compile("<.?html+>");
         Matcher m = p.matcher(url);
-        if (m.find()) {
-            return true;
-        } else {
-            return false;
-        }
+        return m.find();
     }
 }

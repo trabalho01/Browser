@@ -10,6 +10,7 @@ package browser;
  * @author lucas
  */
 public class Texto extends No {
+
     public String texto;
 
     public Texto(String texto, String atributos) {
